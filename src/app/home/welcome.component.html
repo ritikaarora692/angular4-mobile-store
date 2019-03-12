@@ -1,0 +1,44 @@
+﻿<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+      Welcome to Vehicle Service Management!
+    </h1></div>
+    <table class='table' id="dataTable" frame="box">
+      <tbody>
+        <tr>
+          <td>Customer Full Name *Vehicle Registration Number* 
+            <button type="button" class="deleteBtn" [routerLink]="['/viewDetails',1]">View</button>
+            <button type="button" class="deleteBtn" (click)="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+        <tr>
+            <td>Customer Full Name *Vehicle Registration Number* 
+              <button type="button" class="deleteBtn" [routerLink]="['/viewDetails',1]">View</button>
+              <button type="button" class="deleteBtn" (click)="deleteUser(user)">Delete</button>
+            </td>
+          </tr>
+          <tr>
+              <td>Customer Full Name *Vehicle Registration Number* 
+                <button type="button" class="deleteBtn" [routerLink]="['/viewDetails',1]">View</button>
+                <button type="button" class="deleteBtn" (click)="deleteUser(user)">Delete</button>
+              </td>
+            </tr>
+            <button type="button" class="deleteBtn" (click)="undoChanges(user)">Undo</button>
+            <button type="button" class="deleteBtn" [routerLink]="['/addNewRequest']">AddNewRequest</button>
+      </tbody>
+    </table>
+    <table class='table' id="dataTable" frame="box" *ngIf='vehicles && vehicles.length'>
+      <tbody>
+        <tr *ngFor='let vehicle of vehicles'>
+          <td>{{ vehicle.customerName }} {{ vehicle.registrationNumber }}<br/>
+            <button type="button" class="deleteBtn" [routerLink]="['/viewDetails',1]">View</button>
+                <button type="button" class="deleteBtn" (click)="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+        <button type="button" class="deleteBtn" (click)="undoChanges(user)">Undo</button>
+        <button type="button" class="deleteBtn" [routerLink]="['/addNewRequest']">AddNewRequest</button>
+      </tbody>
+    </table>
+    <div class='container'>
+        <router-outlet></router-outlet>
+    </div>
